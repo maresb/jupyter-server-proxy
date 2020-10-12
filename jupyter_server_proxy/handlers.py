@@ -175,6 +175,7 @@ class ProxyHandler(WebSocketHandlerMixin, IPythonHandler):
             context_path = self._get_context_path(host, port)
             headers['X-Forwarded-Context'] = context_path
             headers['X-ProxyContextPath'] = context_path
+            headers['X-Script-Name'] = context_path
             # to be compatible with flask/werkzeug wsgi applications
             headers['X-Forwarded-Prefix'] = context_path
 
